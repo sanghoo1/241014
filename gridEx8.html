@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gridEx8</title>
+    <style>
+     /* .container {
+      width: 80vw;
+      height: 60vh;
+      margin: auto;
+      
+      display: grid;
+      grid-template-columns: 1fr 15fr 1fr;
+      grid-auto-rows: 100px 1fr 1fr 100px;
+      color: #fff;
+     
+    }
+    header, footer{
+      background-color: #000;
+      grid-column: 1/4;
+      display: grid;
+      place-items: center;
+    }
+    nav{
+      background-color: blueviolet;
+      grid-row: 2/3;
+    }
+    nav ul{
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .blank{
+      background-color: cornflowerblue;
+      grid-row:3/4;
+    }
+    .video{
+      background-color: burlywood;
+      grid-column: 2/3;
+      grid-row: 2/4;
+    }
+    .item{
+      background-color: aqua;
+      grid-column: 3/4;
+      grid-row: 2/4;
+      display: grid;
+      place-items: center;
+    }
+    .item1{
+     
+      grid-row: 2/3;
+    }
+    .item2{
+      grid-row:3/4;
+      
+    }
+    .video{
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-top: 56.25%;
+    }
+    .video a{
+      display: block;
+      width: 100px;
+      padding: 10px 0;
+      text-decoration: none;
+      color: #fff;
+      background-color: #000;
+      text-align: center;
+      position: absolute;
+      top:50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      transition: 0.3s;
+    }
+    .video a:hover{
+      border-radius: 30px;
+    }
+    .video .youtube{
+      position: absolute;
+    
+      top:0;
+      left: 0;
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+    } */
+     .vertical-txt{
+      writing-mode: vertical-lr;
+      text-orientation: upright;
+     }
+     .border-style{
+      border: 3px solid #000;
+      border-top: none;
+     }
+     .container{
+      text-transform: capitalize;
+      width: 90%;
+      margin: 20px auto;
+      display: grid;
+      /* 4행 3열 */
+      grid-template-columns:minmax(70px,auto) 1fr minmax(70px,auto) ;
+      grid-auto-rows: 70px minmax(200px,30vh) minmax(200px,30vh) 70px ;
+     }
+     header,footer{
+      background-color: black;
+      color: #fff;
+      grid-column: 1 / span 3;
+      display: grid;
+      place-items: center;
+     }
+     .container .list{
+      list-style: none;
+      margin: 0; padding: 0;
+      background-color: cadetblue;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+     
+     }
+     .container .blank{
+      background-color: blueviolet;
+      grid-row: 3 /4;
+      grid-column: 1/2;
+      border-bottom: none;
+    }
+    .container .video-wrapper{
+      background-color: aquamarine;
+      position: relative;
+      grid-column: 2/3;
+      grid-row: 2/4;
+      /* 여백이 안생기게 비디오를 쓰게 하고싶으면 영상을 크게 쓰고 overlfow를 히든으로 쓰면된다.*/
+      overflow: hidden;
+    }
+     .container .video-wrapper video{
+      object-fit: cover; 
+      position: absolute;
+      top:50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      
+     }
+     .container .video-wrapper a{
+      position: absolute;
+      top:50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      transition: 0.3s;
+      background-color: #000;
+      padding: 6px 30px;
+      color: #fff;
+      text-decoration: none;
+     }
+     .container .video-wrapper a:hover{
+      border-radius: 30px;
+     }
+     .container .item{
+      background-color: aqua;
+      display: grid;
+      place-items: center;
+      
+     }
+     .container .item2{
+      border-bottom: none;
+     }
+    </style>
+</head>
+<body>
+  <div class="container">
+    <header>Header</header>
+    <ul class="list  vertical-txt border-style">
+      <li>menu1</li>
+      <li>menu2</li>
+      <li>menu3</li>
+    </ul>
+    
+    <div class="blank border-style"></div>
+    <div class="video-wrapper">
+      <!-- <iframe  src="https://www.youtube.com/embed/2Gg6Seob5Mg?si=HC50McSh8zPEEIT6&amp;controls=0&mute=1&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="youtube"></iframe> -->
+
+      <video src="./sampleV.mp4" autoplay loop muted></video>
+      <a href="#">Grid</a>
+    </div>
+    <div class="item item1 vertical-txt border-style">item1</div>
+    <div class="item item2 vertical-txt border-style">item2</div>
+    <footer>Footer</footer>
+  </div>
+</body>
+</html>
