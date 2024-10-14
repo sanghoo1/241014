@@ -17,6 +17,6 @@ text-orientation: upright;
 
 html.json
 
-\는 " 앞에 써줘야한다.
+텍스트로만 쓰는 " 큰따옴표는  " 앞에 \를 써줘야한다.
 
 개발자도구 ctrl+u 는 코드만 보여줌
